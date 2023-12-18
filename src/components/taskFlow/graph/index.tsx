@@ -1,22 +1,29 @@
+import dynamic from 'next/dynamic'
 import { useRef, useEffect } from "react"
-import FlowGraph from "./graph"
+import { useAppDispatch } from "@/hooks"
+import { setGraph } from "../flowSlice"
+import { FlowGraph } from "./graph"
 
-
-export function GraphComponent() {
-  const graph = useRef<FlowGraph>()
+// TODO element is undefined
+export const GraphComponent = dynamic(Promise.resolve((props: any) => {
+  const dispatch = useAppDispatch()
+  const graphDom = useRef<HTMLDivElement>(null)
 
   async function initializeGraph() {
-    const {default: FlowGraph} = await import('./graph')
-    graph.current = new FlowGraph({
-      container: document.getElementById('graph') || undefined
+    const { FlowGraph } = await import('./graph')
+    const graph: FlowGraph = new FlowGraph({
+      container: graphDom.current || undefined
     })
+    dispatch(setGraph(graph))
   }
 
   useEffect(() => {
     initializeGraph()
   }, [])
 
-  return <div>
-    <div id="graph" />
-  </div>
-}
+  // TODO className
+  return <div className={props.className} ref={graphDom} />
+}), {
+  ssr: false
+})
+export { FlowGraph } from "./graph"

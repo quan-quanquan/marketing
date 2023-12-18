@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { ruleReducer } from '@/components/ruleEngine';
 import { createWrapper } from 'next-redux-wrapper';
+import { ruleReducer, ruleName } from '@/components/ruleEngine';
+import { flowReducer, flowName } from '@/components/taskFlow';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      rule: ruleReducer
+      [ruleName]: ruleReducer,
+      [flowName]: flowReducer
     }
   })
 }

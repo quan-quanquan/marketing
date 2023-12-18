@@ -8,6 +8,12 @@ dependencies:
   '@antv/x6':
     specifier: ^2.16.1
     version: 2.16.1
+  '@antv/x6-plugin-stencil':
+    specifier: ^2.1.4
+    version: 2.1.4(@antv/x6@2.16.1)
+  '@antv/x6-react-shape':
+    specifier: ^2.2.2
+    version: 2.2.2(@antv/x6@2.16.1)(react-dom@18.2.0)(react@18.2.0)
   '@douyinfe/semi-ui':
     specifier: 2.48.0
     version: 2.48.0(react-dom@18.2.0)(react@18.2.0)
@@ -86,6 +92,35 @@ packages:
 
   /@antv/x6-geometry@2.0.5:
     resolution: {integrity: sha512-MId6riEQkxphBpVeTcL4ZNXL4lScyvDEPLyIafvWMcWNTGK0jgkK7N20XSzqt8ltJb0mGUso5s56mrk8ysHu2A==, tarball: https://registry.npmmirror.com/@antv/x6-geometry/-/x6-geometry-2.0.5.tgz}
+    dev: false
+
+  /@antv/x6-plugin-dnd@2.1.1(@antv/x6@2.16.1):
+    resolution: {integrity: sha512-v0szzik1RkadPDn4Qi5mOSaB2AeI78D40/YuCYbPVzplG+HydGsHwO3MLTgJPQ+R5n0eM0W5F850p1VfTOHR7g==, tarball: https://registry.npmmirror.com/@antv/x6-plugin-dnd/-/x6-plugin-dnd-2.1.1.tgz}
+    peerDependencies:
+      '@antv/x6': ^2.x
+    dependencies:
+      '@antv/x6': 2.16.1
+    dev: false
+
+  /@antv/x6-plugin-stencil@2.1.4(@antv/x6@2.16.1):
+    resolution: {integrity: sha512-/hCrf7h7Vg3Gb9X1ent5cg3sMTUaJoZWQC9NUp9S0KLTtDgYn0KMajZJLNpKPTyK8mNnEjffWZ/skcZBQd1NwA==, tarball: https://registry.npmmirror.com/@antv/x6-plugin-stencil/-/x6-plugin-stencil-2.1.4.tgz}
+    peerDependencies:
+      '@antv/x6': ^2.x
+    dependencies:
+      '@antv/x6': 2.16.1
+      '@antv/x6-plugin-dnd': 2.1.1(@antv/x6@2.16.1)
+    dev: false
+
+  /@antv/x6-react-shape@2.2.2(@antv/x6@2.16.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-uwehrdNCPkgBpVfsxEQk1M77Q+q9D7+HkqIm4Fm3Oz4kzkKCoc3KoxCIoLimbANAhqAPEJ40sRR0ZY+lzmP7WQ==, tarball: https://registry.npmmirror.com/@antv/x6-react-shape/-/x6-react-shape-2.2.2.tgz}
+    peerDependencies:
+      '@antv/x6': ^2.x
+      react: '>=18.0.0'
+      react-dom: '>= 18.0.0'
+    dependencies:
+      '@antv/x6': 2.16.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@antv/x6@2.16.1:

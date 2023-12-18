@@ -29,5 +29,5 @@ export const ruleSlice = createSlice({
 })
 
 export const ruleReducer = ruleSlice.reducer
-
+export const ruleName = ruleSlice.name
 export const { addCondition } = ruleSlice.actions
