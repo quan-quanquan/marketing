@@ -30,3 +30,5 @@ export const StencilComponent = dynamic(Promise.resolve((props: any) => {
 }), {
   ssr: false
 })
+
+export { FlowStencil } from './stencil'

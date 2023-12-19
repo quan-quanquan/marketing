@@ -61,4 +61,8 @@ export class FlowGraph {
       tools: ['button-remove']
     })
   }
+
+  bindEvent() {
+    
+  }
 }
