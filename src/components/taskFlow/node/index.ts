@@ -41,21 +41,25 @@ export function registerNodes() {
 export const defaultTask = {
   'like': {
     name: '点赞',
-    shape: MarterialShape.Custom_Task_Default
+    shape: MarterialShape.Custom_Task_Default,
+    type: 'task' // TODO
   },
   'share': {
     name: '分享',
-    shape: MarterialShape.Custom_Task_Default
+    shape: MarterialShape.Custom_Task_Default,
+    type: 'task' 
   },
 }
 
 export const defaultPlay = {
   'lottery': {
     name: '抽奖',
-    shape: MarterialShape.Custom_Task_Default
+    shape: MarterialShape.Custom_Task_Default,
+    type: 'play'
   },
   'exchange': {
     name: '兑换',
-    shape: MarterialShape.Custom_Task_Default
+    shape: MarterialShape.Custom_Task_Default,
+    type: 'play'
   },
 }

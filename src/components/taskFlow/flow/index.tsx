@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import dynamic from 'next/dynamic'
+// export { registerNodes } from '../node'
 import './index.scss'
+// import { registerNodes } from "../node";
 
 export function FlowComponent() {
   // TODO element is undefined
@@ -11,14 +13,17 @@ export function FlowComponent() {
     ssr: false
   })
 
-  async function initializeNodes() {
-    const { registerNodes } = await import('../node')
-    registerNodes()
-  }
+  // registerNodes()
 
-  useEffect(() => {
-    initializeNodes()
-  }, [])
+  // async function initializeNodes() {
+  //   const { registerNodes } = await import('../node')
+  //   registerNodes()
+  // }
+  // initializeNodes()
+
+  // useEffect(() => {
+  //   initializeNodes()
+  // }, [])
 
   return <div className="flow-container">
     <StencilComponent className="flow-stencil" />

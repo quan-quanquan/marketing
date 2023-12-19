@@ -10,7 +10,9 @@ export const GraphComponent = dynamic(Promise.resolve((props: any) => {
   const graphDom = useRef<HTMLDivElement>(null)
 
   async function initializeGraph() {
+    const { registerNodes } = await import('../node')
     const { FlowGraph } = await import('./graph')
+    registerNodes()
     const graph: FlowGraph = new FlowGraph({
       container: graphDom.current || undefined
     })

@@ -47,12 +47,14 @@ export class FlowStencil {
   loadMaterials() {
     const tasks = Object.values(defaultTask).map(item => {
       return this.graph.createNode(item.shape, {
-        name: item.name
+        name: item.name,
+        type: item.type
       })
     })
     const plays = Object.values(defaultPlay).map(item => {
       return this.graph.createNode(item.shape, {
-        name: item.name
+        name: item.name,
+        type: item.type
       })
     })
     this.stencil.load(tasks, 'task')
